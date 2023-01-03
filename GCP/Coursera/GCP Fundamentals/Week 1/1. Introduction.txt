@@ -1,0 +1,20 @@
+https://www.coursera.org/learn/gcp-fundamentals/lecture/2VfPk/course-introduction
+
+provide and overview of gcp offerings: 
+-compute
+-storage
+-big data
+-machine learning
+-application services 
+-mobile
+-analytics
+-back end servcies 
+
+App Engine, 
+Google Kubernetes Engine, 
+Compute Engine, 
+ Cloud Storage, 
+Cloud SQL, 
+Cloud Bigtable,  
+Firestore, 
+interact with Google Cloud services

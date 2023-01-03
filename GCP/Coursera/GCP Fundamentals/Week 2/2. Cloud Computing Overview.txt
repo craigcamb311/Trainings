@@ -1,0 +1,76 @@
+What is Cloud?
+
+US NIST definition 
+Cloud computing is a way of using information technology IT that has five equally important traits 
+
+01 - Customers get computing resources that are ondemand and self-service  
+02 - Customers get access to those resources over the internet, from anywhere 
+03 - The provider of those resources allocates them to users out of that pool 
+04 - Resources are elastic - which means they're flexible, so customers can be
+05 - Customers pay only for what they use or reverse as they go. 
+
+PaaS - Platform as a Service
+- Compute
+- Storage 
+- Network capabilities 
+- Pay for what they allocate
+
+
+IaaS - Infrastructure as a Service
+- bind code to libraries that provide access to the infrastructure
+- Pay for what they use
+
+Serverless technologies 
+-  Cloud Functions, which manages event driven code as a pay as you go service
+-  Cloud Run, which allows customers to deploy their containerized microservices based application, in a fully managed environment
+
+SaaS - Software as a Service
+Software that runs in the cloud
+
+Google cloud runs on googles own network.
+
+five major geographic locations: North America, South America, Europe, Asia, and Australia
+location affects qualities like availability, durability, and latency
+
+Regions represent independent geographic areas and are composed of zones
+A zone is an area where Google Cloud resources are deployed.
+
+multi-region configurations allow you to replicate the database's data not just in multiple zones, but in multiple zones across multiple regions
+
+cloud.google.com/about/locations
+
+google security infrastructure
+
+Hardware Infrastructure Layer 
+- Hardware design and provenance
+- Secure boot stack 
+- Premises security
+
+Service deployment layer
+- Encryption of inter-service communication 
+
+User identity Layer
+- user identity
+
+Storage services layer
+-Encryption at rest
+
+Internet communication layer
+-Google Front End ("GFE")
+-Denial of Service ("DoS") protection 
+
+Operational Security Layer
+-Intrustion detection 
+- Reducing insider risk 
+- Employee Universal Second Factor (U2F) use
+- Software development practices 
+
+Per second billing 
+compute engine
+google kubernetes engine
+dataproc 
+app engine flexible
+
+
+Rate quota - reset after specific time 
+Allocation quota - govern the number of resources you can have in your projects
