@@ -1,0 +1,43 @@
+Top Down
+
+Level 4 Organzization Node
+Level 3 Folders
+Level 2 Projects
+Level 1 Resource
+
+The resource hierarchy directly relates how policies are managed and applied on google cloud 
+
+policies can be applied to all levels. 
+
+projects are seperate entities under the organization node. 
+
+projects hold resources, each of which belongs to one project.
+
+projects can have seperate owners and users and are billed and managed seperately 
+
+
+
+PROJECT_ID - Globally unique, assigned by google but mutable during creation, immutable afer creation
+PROJECT_NAME - Need not be unique, chosen by you, mutable,
+PROJECT_NUMBER - Globally unique, assigned by google, immutable
+
+Resource manager tool 
+- gather a list of projects
+- create new projects
+- update existings projects
+- delete projects
+- recover previosly deleted projects
+- access through rpc api and rest api
+
+A folder can contain projects, other folders, or a combination of both
+You can use folders to group projects under an organization in a hierarchy
+
+To use folders, you must have an organization node, which is the very topmost resource in the Google Cloud hierarchy
+Everything else attached to that account goes under this node, which includes folders, projects, and other resources
+
+organization policy administrator so that only people with privilege can change policies
+You can also assign a project creator role, which is a great way to control who can create projects and, therefore, who can spend money
+
+ Identity and Access Management, or IAM. With IAM, the administrators can apply policies that define who can do what on which resources.
+ 
+ The who part of an IAM policy can be a Google account, a Google group, a service account, or a Cloud Identity domain

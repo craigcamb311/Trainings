@@ -65,6 +65,8 @@ Operational Security Layer
 - Employee Universal Second Factor (U2F) use
 - Software development practices 
 
+cloud.google.com/security/security-design
+
 Per second billing 
 compute engine
 google kubernetes engine
