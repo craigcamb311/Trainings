@@ -1,4 +1,4 @@
-# Notes from open-ai chat with your data course.
+# Notes from open-ai langchain chat with your data course.
 ## found at https://learn.deeplearning.ai/langchain-chat-with-your-data/
 
 
@@ -20,6 +20,7 @@ Datatypes include:
 Loader will return a `Document` object which has content and metadata 
 
 Can import pdf document loader from langchain as: 
+
 from langchain.document_loaders import PyPDFLoader 
 
 
