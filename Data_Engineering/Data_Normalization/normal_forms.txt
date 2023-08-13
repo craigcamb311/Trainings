@@ -1,0 +1,98 @@
+Data Normalization
+Notes taken from : https://www.youtube.com/watch?v=GFQaEYEc8_8
+Uses different databases examples 
+
+Normal Forms are considered safety checks for your schemas to prevent
+insertion, deletion, and update anomolies
+
+First Normal Form (1NF):
+
+- Table must have primary key
+
++------------------------+
+| First_Name | Last_Name |
++------------+-----------+
+| Adam       | smith     |
++------------+-----------+
+| John       | Adams     |
++------------+-----------+
+
+-- Non Unique what happens if another Adam Smith is added to the table 
+
+Table should look like something of the sort: 
+
++-------------+------------------------+
+| PK_Person_ID| First_Name | Last_Name |
++-------------+------------+-----------+
+| 10001       | Adam       | smith     |
++-------------+------------+-----------+
+| 10002       | John       | Adams     |
++-------------+------------+-----------+
+
+- Using Row Order to convey information violates 1NF 
+-- data would not need to be sorted in any way such as ordered by first name and last name 
+- Mixing of data types within a column violates 1NF 
+
+-- Assuming PK_Person_ID is an integer datatype
+-- the following table would not be allowed 
++--------------+------------------------+
+| PK_Person_ID | First_Name | Last_Name |
++--------------+------------+-----------+
+| 10001        | Adam       | smith     |
++--------------+------------+-----------+
+| 10001.31     | John       | Adams     |
++--------------+------------+-----------+
+
+ - Storing repeating groups of data violates 1NF
+-- below is not good design 
++--------------+------------------------+-----------------+------------+-----------------+------------+---------+
+| PK_Person_ID | First_Name | Last_Name | Checkout_Item_1 | Quantity_1 | Checkout_Item_2 | Quantity_2 | ... etc | 
++--------------+------------+-----------+-----------------+------------+-----------------+------------+---------+
+| 10001        | Adam       | smith     | Beans           | 2          | Ham             | 1          |         |
++--------------+------------+-----------+-----------------+------------+-----------------+------------+---------+
+| 10001.31     | John       | Adams     | Chicken         | 4          | Cracker         | 2          |         |
++--------------+------------+-----------+-----------------+------------+-----------------+------------+---------+
+
+Better is:
+
++------------------------+-----------------+----------+
+| First_Name | Last_Name | Checkout_Item   | Quantity |
++------------+-----------+-----------------+----------+
+| Adam       | smith     | Beans           | 2        |
++------------+-----------+-----------------+----------+
+| Adam       | smith     | Ham             | 1        |
++------------+-----------+-----------------+----------+
+| John       | Adams     | Chicken         | 4        |
++------------+-----------+-----------------+----------+
+| John       | Adams     | Cracker         | 4        |
++------------+-----------+-----------------+----------+
+
+Where the Primary Key is First_Name, Last_Name, Checkout_Item
+
+Second Noraml Form (2NF):
+Each non-key attributes must depend entirely on the primary
+
+Lets say there is a membership club for this checkout:
+
++------------------------+-----------------+----------+-------------------+
+| First_Name | Last_Name | Checkout_Item   | Quantity | Membership_Status |
++------------+-----------+-----------------+----------+-------------------+
+| Adam       | smith     | Beans           | 2        | Super Saver       |
++------------+-----------+-----------------+----------+-------------------+
+| Adam       | smith     | Ham             | 1        | Super Saver       |
++------------+-----------+-----------------+----------+-------------------+
+| John       | Adams     | Chicken         | 4        | Discount Club     |
++------------+-----------+-----------------+----------+-------------------+
+| John       | Adams     | Cracker         | 4        | Discount Club     |
++------------+-----------+-----------------+----------+-------------------+
+
+
+
+
+
+
+
+
+
+
+
